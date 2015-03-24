@@ -1,7 +1,7 @@
 ---
 driver:
   name: vagrant
-  
+
 provisioner:
   name: chef_solo
 
@@ -10,5 +10,4 @@ platforms:
 
 suites:
   - name: default
-    run_list: recipe[.::default]
-    attributes:
+    run_list: recipe[public_ip]
