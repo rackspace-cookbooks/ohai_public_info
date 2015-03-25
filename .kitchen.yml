@@ -3,7 +3,7 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 platforms:
   - name: ubuntu-12.04
@@ -11,3 +11,6 @@ platforms:
 suites:
   - name: default
     run_list: recipe[public_ip]
+    attributes: 
+      ohai: 
+        plugin_path: "/etc/chef/ohai_plugins"
