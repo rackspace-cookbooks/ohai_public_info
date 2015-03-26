@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'berkshelf', '> 3.1'
-gem 'chef', '> 12'
+gem 'chef'
+gem 'ipaddress'
 gem 'rake'
 gem 'rubocop'
 gem 'foodcritic'

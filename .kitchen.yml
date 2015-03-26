@@ -11,6 +11,3 @@ platforms:
 suites:
   - name: default
     run_list: recipe[public_ip]
-    attributes: 
-      ohai: 
-        plugin_path: "/etc/chef/ohai_plugins"
