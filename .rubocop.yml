@@ -42,6 +42,10 @@ WordArray:
 UnusedBlockArgument:
   Enabled: false
 
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Documentation:
   Enabled: false
 
