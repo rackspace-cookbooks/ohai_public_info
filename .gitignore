@@ -16,6 +16,11 @@ Gemfile.lock
 bin/*
 .bundle/*
 
-.coverage/*
 .kitchen/
 .kitchen.local.yml
+
+# chefspec
+.coverage/
+
+# misc
+.DS_Store
