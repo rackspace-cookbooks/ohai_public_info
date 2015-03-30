@@ -20,7 +20,7 @@ class Chef
 
         # Don't set the tag if it's already listed as the IP
         if remote_ip == IPAddress(node['ipaddress']).address
-          Chef::Log.info("\"#{remote_ip.address}\" is already defined as the node IP,")
+          Chef::Log.info("\"#{remote_ip}\" is already defined as the node IP,")
           Chef::Log.info("so we don't need to add a duplicate tag.")
         # Don't set multiple tags.
         elsif existing_ip_tags.count > 0
