@@ -1,17 +1,24 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf', '> 3.1'
-gem 'chef'
-gem 'chefspec'
-gem 'foodcritic'
-gem 'foodcritic-rackspace-rules'
-gem 'guard'
-gem 'guard-foodcritic'
-gem 'guard-rubocop'
-gem 'ipaddress'
-gem 'kitchen-vagrant'
-gem 'ohai'
-gem 'rake'
-gem 'rubocop'
-gem 'test-kitchen'
-gem 'vagrant-wrapper'
+group :development do
+  gem 'guard'
+  gem 'guard-foodcritic'
+  gem 'guard-rubocop'
+end
+
+group :kitchen do
+  gem 'test-kitchen'
+  gem 'kitchen-rackspace'
+end
+
+group :lint do
+  gem 'foodcritic'
+  gem 'foodcritic-rackspace-rules'
+  gem 'rubocop'
+end
+
+group :unit do
+  gem 'berkshelf'
+  gem 'chef'
+  gem 'chefspec'
+end
