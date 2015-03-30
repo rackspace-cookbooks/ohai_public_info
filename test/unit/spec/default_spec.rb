@@ -2,13 +2,14 @@
 
 require_relative 'spec_helper'
 
-describe '.::default' do
-  before { stub_resources }
-  describe 'ubuntu' do
-    let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
+describe 'public_ip' do
+  let(:chef_run) { ChefSpec::ServerRunner.new.converge(described_recipe) }
 
-    it 'writes some chefspec code' do
-      skip 'todo'
-    end
+  it 'installs public_info plugin' do
+    expect(chef_run).to install_public_info('test')
+  end
+
+  it 'tags the public ip' do
+    expect(chef_run).to tag_public_ip('test')
   end
 end
