@@ -34,14 +34,13 @@ Ohai.plugin(:Publicinfo) do
     end
     results = JSON.parse(response)
     if results.nil?
-      Ohai::Log.debug('Failed to return Public_info results')
+      Ohai::Log.warn('Failed to return Public_info results')
     else
       public_info Mash.new
       public_info[:remote_ip] = results.key?('remote_ip') ? results['remote_ip'] : results['ip']
       public_info[:X_Forwarded] = results['X_Forwarded']
       public_info[:asn] = results['asn']
       public_info[:city] = results['city']
-      public_info[:country] = results['country']
     end
   end
 end
