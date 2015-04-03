@@ -12,7 +12,8 @@ class Chef
     def action_tag
       converge_by("public_ip_tag #{new_resource.name}") do
         require 'ipaddress'
-
+        include OhaiPublicInfoCookbook::Helpers
+  
         begin
           # Validate and format IP addresses
           remote_ip = IPAddress(node['public_info']['remote_ip']).address
