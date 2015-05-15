@@ -1,20 +1,35 @@
+[![Circle CI](https://circleci.com/gh/rackspace-cookbooks/ohai_public_info.svg?style=svg)](https://circleci.com/gh/rackspace-cookbooks/ohai_public_info)
+
 # ohai_public_info
+
 ohai_public_info is a Chef library cookbook to install the public_info Ohai plugin
 and allow tagging of a node with its public IP.
 
 ## Supported Platforms
 
-Ubuntu 12.04 & 14.04
-
-CentOS 6.5
+* Ubuntu 12.04 
+* Ubuntu 14.04
+* CentOS 6.5
 
 ## Usage
 
+Place a dependency on the ohai_public_info cookbook in your cookbook's metadata.rb
+
+```
+depends 'ohai_public_info'
+```
+
+Then, in a recipe:
+
+```
+ohai_public_info 'default'
+```
+
+## Resources
+
 ### ohai_public_info
 
-Installs the Ohai public_info plugin and retrieves the new attributes data.
-
-`ohai_public_info 'test'`
+Install ohai `plugin_info` plugin (which populates attributes like `node['public_info']['remote_ip']`)
 
 #### public_ip_tag
 
@@ -22,11 +37,22 @@ Tags the node with its `node['public_info']['remote_ip']` attribute in the
 following form: `RemoteIP:{remote_ip}`, but will not add the tag if the node's
 'normal' IP matches its public IP.
 
+### Examples
+
+#### Install ohai plugin info and tag a node with its plublic ip
+
 ```
+ohai_public_info 'default'
+public_ip_tag 'default'
+```
+
+```
+$- knife node show just-a-node
+
 node Name:   just-a-node
 Environment: production
 FQDN:        just-a-node.example.com
-IP:          6.7.8.9
+IP:          10.0.0.1
 ...
 Tags:        RemoteIP:9.8.7.6
 ```
