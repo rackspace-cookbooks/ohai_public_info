@@ -10,4 +10,4 @@ issues_url       'https://github.com/rackspace-cookbooks/ohai_public_info/issues
 version          '0.1.1'
 
 depends 'ohai'
-depends 'poise'
+depends 'poise', '~> 2.0.0'
