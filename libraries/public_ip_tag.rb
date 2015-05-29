@@ -1,3 +1,5 @@
+require 'poise'
+
 class Chef
   class Resource::PublicIpTag < Resource
     include Poise
