@@ -17,7 +17,7 @@ class Chef
           # Validate and format IP addresses
           remote_ip = IPAddress(node['public_info']['remote_ip']).address
         rescue
-          data = runtime_attribute('public_info', "#{node['ohai']['plugin_path']}")
+          data = runtime_attribute('public_info', node['ohai']['plugin_path'])
           remote_ip = data['remote_ip']
         end
         tags = node.tags
