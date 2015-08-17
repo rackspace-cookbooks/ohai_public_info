@@ -17,7 +17,7 @@ class Chef
           include_recipe 'ohai'
 
           cookbook_file 'public_info.rb' do
-            path  "#{node['ohai']['plugin_path']}/public_info.rb"
+            path "#{node['ohai']['plugin_path']}/public_info.rb"
             cookbook 'ohai_public_info'
             owner 'root'
             group 'root'
